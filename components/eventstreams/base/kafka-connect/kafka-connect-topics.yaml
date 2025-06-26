@@ -91,3 +91,19 @@ spec:
   partitions: 3
   replicas: 1
   topicName: SENSOR.READINGS
+
+---
+
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaTopic
+metadata:
+  name: fake-transactions
+  labels:
+    eventstreams.ibm.com/cluster: my-kafka-cluster
+spec:
+  config:
+    min.insync.replicas: '1'
+    retention.bytes: '524288000'
+  partitions: 3
+  replicas: 1
+  topicName: TRANSACTIONS
