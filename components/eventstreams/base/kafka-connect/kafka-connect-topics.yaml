@@ -113,7 +113,7 @@ spec:
 apiVersion: eventstreams.ibm.com/v1beta2
 kind: KafkaTopic
 metadata:
-  name: fake-transactions
+  name: fake-abandonedorders
   labels:
     eventstreams.ibm.com/cluster: my-kafka-cluster
 spec:
