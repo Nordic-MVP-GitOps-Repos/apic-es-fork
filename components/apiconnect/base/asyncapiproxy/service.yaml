@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-proxy-eem
+spec:
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: http
+  selector:
+    app: nginx-proxy-eem

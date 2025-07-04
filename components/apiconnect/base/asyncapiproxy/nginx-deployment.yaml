@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-proxy
+  name: nginx-proxy-eem
 spec:
   selector:
     matchLabels:
-      app: nginx-proxy
+      app: nginx-proxy-eem
   template:
     metadata:
       labels:
-        app: nginx-proxy
+        app: nginx-proxy-eem
     spec:
       containers:
       - name: nginx-proxy

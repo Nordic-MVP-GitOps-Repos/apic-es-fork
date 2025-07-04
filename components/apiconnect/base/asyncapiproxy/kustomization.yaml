@@ -15,4 +15,5 @@ generatorOptions:
 resources:
   - nginx-deployment.yaml
   - buildconfig.yaml
+  - service.yaml
   - tls/
