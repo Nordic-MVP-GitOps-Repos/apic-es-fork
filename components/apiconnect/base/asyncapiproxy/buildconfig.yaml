@@ -19,7 +19,7 @@ spec:
   source:
     type: Git
     git:
-      uri: 'https://github.com/Nordic-MVP-GitOps-Repos/apic-es-fork/tree/main/components/apiconnect/base/asyncapiproxy/'
+      uri: 'https://github.com/Nordic-MVP-GitOps-Repos/apic-es-fork/components/apiconnect/base/asyncapiproxy/'
       ref: master
   triggers:
     - type: ConfigChange
