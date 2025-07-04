@@ -21,6 +21,12 @@ spec:
         - name: nginx-config-volume
           mountPath: /etc/nginx/templates/default.conf.template 
           subPath: default.conf.template
+        - name: certificates
+          mountPath: /etc/nginx/default.conf/tls.crt
+          subPath: tls.crt
+        - name: certificates
+          mountPath: /etc/nginx/default.conf/tls.crt
+          subPath: tls.key
         env:
         - name: EEM_TOKEN
           valueFrom:
@@ -31,3 +37,6 @@ spec:
       - name: nginx-config-volume
         configMap:
           name: nginx-config
+      - name: certificates
+        secret: 
+          secretName: nginx-server-cert-secret
