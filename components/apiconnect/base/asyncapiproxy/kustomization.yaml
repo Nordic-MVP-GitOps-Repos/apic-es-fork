@@ -14,3 +14,4 @@ generatorOptions:
 
 resources:
   - nginx-deployment.yaml
+  - buildconfig.yaml
