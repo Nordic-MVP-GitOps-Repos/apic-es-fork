@@ -20,8 +20,8 @@ spec:
     type: Git
     git:
       uri: https://github.com/Nordic-MVP-GitOps-Repos/apic-es-fork
-      contextDir: components/apiconnect/base/asyncapiproxy/
       ref: master
+    contextDir: components/apiconnect/base/asyncapiproxy/
   triggers:
     - type: ConfigChange
   runPolicy: Serial
