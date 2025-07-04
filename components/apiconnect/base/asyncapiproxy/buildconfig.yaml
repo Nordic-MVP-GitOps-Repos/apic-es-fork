@@ -1,0 +1,26 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: nginx
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: nginx-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'nginx:latest'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      imageOptimizationPolicy: SkipLayers
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/Nordic-MVP-GitOps-Repos/apic-es-fork/tree/main/components/apiconnect/base/asyncapiproxy/'
+      ref: master
+  triggers:
+    - type: ConfigChange
+  runPolicy: Serial
