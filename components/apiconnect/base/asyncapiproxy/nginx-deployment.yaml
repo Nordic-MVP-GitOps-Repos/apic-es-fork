@@ -22,11 +22,7 @@ spec:
           mountPath: /etc/nginx/templates/default.conf.template 
           subPath: default.conf.template
         - name: certificates
-          mountPath: /etc/nginx/default.conf/tls.crt
-          subPath: tls.crt
-        - name: certificates
-          mountPath: /etc/nginx/default.conf/tls.crt
-          subPath: tls.key
+          mountPath: /etc/nginx/default.conf/
         env:
         - name: EEM_TOKEN
           valueFrom:
