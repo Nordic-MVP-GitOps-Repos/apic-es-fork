@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: nginx-proxy
-        image: nginx
+        image: ghcr.io/ks-no/openshift-nginx/fiks-nginx-openshift:1.9.2
         ports:
         - containerPort: 8080
         volumeMounts:
