@@ -16,6 +16,7 @@ spec:
         image: image-registry.openshift-image-registry.svc:5000/cp4i/nginx:latest
         ports:
         - containerPort: 8080
+          name: http
         volumeMounts:
         - name: nginx-config-volume
           mountPath: /etc/nginx/templates/default.conf.template 
@@ -25,7 +26,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: eem-token-secret 
-              key: eem-token             
+              key: eem-token  
       volumes:
       - name: nginx-config-volume
         configMap:
