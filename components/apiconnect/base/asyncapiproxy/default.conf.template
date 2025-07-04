@@ -1,8 +1,9 @@
 server {
-    listen 8080; # Or the port you want Nginx to listen on
+    listen 8080;
+    listen 9443 ssl
 
     location / {
-        proxy_pass         https://eem.eventendpointmanagement.event-automation-e7d3d93b8b317d269525bf063b24f98d-0000.eu-de.containers.appdomain.cloud; # Replace with your target site
+        proxy_pass         https://eem.eventendpointmanagement.event-automation-e7d3d93b8b317d269525bf063b24f98d-0000.eu-de.containers.appdomain.cloud; 
         proxy_set_header   Host             $host;
         proxy_set_header   X-Real-IP        $remote_addr;
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
