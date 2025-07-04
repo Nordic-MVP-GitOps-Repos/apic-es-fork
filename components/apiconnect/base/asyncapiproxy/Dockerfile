@@ -1,6 +1,6 @@
 # See https://github.com/ks-no/openshift-nginx/blob/main/nginx/Dockerfile
 
-FROM nginx:1.28.0-alpine
+FROM nginx
 
 # Remove default welcome page
 RUN rm /usr/share/nginx/html/index.html
