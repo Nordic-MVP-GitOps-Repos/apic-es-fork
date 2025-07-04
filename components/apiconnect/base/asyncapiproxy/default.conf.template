@@ -1,0 +1,29 @@
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+
+    server {
+        listen 8080; # Or the port you want Nginx to listen on
+
+        location / {
+            proxy_pass         https://eem.eventendpointmanagement.event-automation-e7d3d93b8b317d269525bf063b24f98d-0000.eu-de.containers.appdomain.cloud; # Replace with your target site
+            proxy_set_header   Host             $host;
+            proxy_set_header   X-Real-IP        $remote_addr;
+            proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+            proxy_set_header   Authorization "Bearer $EEM_TOKEN"; 
+
+            # Optional:  Handle redirects from the proxied site correctly
+            proxy_redirect     off;
+        }
+    }
+}

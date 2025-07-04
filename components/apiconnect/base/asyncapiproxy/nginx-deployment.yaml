@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-proxy
+spec:
+  selector:
+    matchLabels:
+      app: nginx-proxy
+  template:
+    metadata:
+      labels:
+        app: nginx-proxy
+    spec:
+      containers:
+      - name: nginx-proxy
+        image: nginx
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/templates/default.conf.template 
+          subPath: default.conf.template
+        env:
+        - name: EEM_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: eem-token-secret 
+              key: eem-token             
+      volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: nginx-config

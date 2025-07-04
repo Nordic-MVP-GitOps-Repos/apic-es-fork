@@ -6,6 +6,8 @@ resources:
   # To install with the top level CR and self signed certificates 
   - apiconnect-cluster.yaml
 
+  - asyncapiproxy/
+
   # To install with the top level CR and custom certificates,
   # update the ingress subdomain and refer your custom certificates in apiconnect-cluster-custom-certs.yaml
   # 
